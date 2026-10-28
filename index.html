@@ -220,16 +220,6 @@ nav a.active:after {
   transform: scaleX(1);
 }
 
-.classification {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--gold);
-  border: 1px solid rgba(142, 115, 76, 0.5);
-  padding: 6px 12px;
-  border-radius: 2px;
-}
-
 /* ==========================================================================
    Hero Section
    ========================================================================== */
@@ -246,7 +236,7 @@ nav a.active:after {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  background: radial-gradient(ellipse at 72% 47%, #4b3c2c 0, #27221d 22%, #171513 54%, #11100f 82%);
+  background: radial-gradient(ellipse at 72% 47%, #2a231b 0, #1c1815 35%, #11100f 82%);
 }
 
 .hero-image:after {
@@ -255,87 +245,6 @@ nav a.active:after {
   inset: 0;
   background: linear-gradient(90deg, #11100f 0%, rgba(17, 16, 15, 0.92) 30%, rgba(17, 16, 15, 0.4) 65%, rgba(17, 16, 15, 0.85) 100%),
               linear-gradient(0deg, #11100f 0%, transparent 25%, transparent 75%, rgba(17, 16, 15, 0.4));
-}
-
-.moon {
-  position: absolute;
-  right: 18%;
-  top: 12%;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 32%, #b3a38b, #625746 65%, #383027);
-  box-shadow: 0 0 100px rgba(198, 168, 117, 0.18);
-  animation: moonFloat 9s ease-in-out infinite alternate;
-}
-
-@keyframes moonFloat {
-  to { transform: translateY(10px); }
-}
-
-.estate-silhouette {
-  position: absolute;
-  bottom: 8%;
-  right: 9%;
-  width: 50%;
-  height: 65%;
-  opacity: .75;
-  filter: drop-shadow(0 0 25px #000);
-}
-
-.estate-silhouette:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 8%;
-  right: 0;
-  height: 54%;
-  background: linear-gradient(90deg, #0d0d0c, #171513);
-  clip-path: polygon(0 20%,13% 20%,13% 8%,22% 8%,22% 0,32% 0,32% 16%,45% 16%,45% 4%,56% 4%,56% 16%,70% 16%,70% 0,82% 0,82% 20%,100% 20%,100% 100%,0 100%);
-}
-
-.estate-silhouette i {
-  position: absolute;
-  bottom: 0;
-  width: 17%;
-  height: 78%;
-  background: #0d0d0c;
-  clip-path: polygon(0 17%,25% 17%,25% 0,75% 0,75% 17%,100% 17%,100% 100%,0 100%);
-}
-
-.estate-silhouette i:before {
-  content: "";
-  position: absolute;
-  top: -10%;
-  left: 25%;
-  width: 50%;
-  height: 20%;
-  background: #0d0d0c;
-  clip-path: polygon(50% 0,100% 100%,0 100%);
-}
-
-.estate-silhouette i:nth-child(1) { left: 8%; height: 82%; }
-.estate-silhouette i:nth-child(2) { left: 29%; height: 92%; width: 19%; }
-.estate-silhouette i:nth-child(3) { left: 55%; height: 80%; }
-.estate-silhouette i:nth-child(4) { left: 76%; height: 87%; }
-.estate-silhouette i:nth-child(5) { left: 91%; height: 64%; width: 12%; }
-
-.fog {
-  position: absolute;
-  bottom: 0;
-  left: -10%;
-  width: 120%;
-  height: 32%;
-  background: rgba(140, 130, 117, 0.1);
-  filter: blur(35px);
-  border-radius: 50%;
-}
-
-.fog-a { animation: fogDrift 16s ease-in-out infinite alternate; }
-.fog-b { bottom: 20%; left: 30%; opacity: .4; animation: fogDrift 22s ease-in-out infinite alternate-reverse; }
-
-@keyframes fogDrift {
-  to { transform: translateX(7%); }
 }
 
 .hero-content {
@@ -812,7 +721,6 @@ nav a.active:after {
   gap: 12px 16px;
   margin: 0 0 22px;
   padding-top: 18px;
-  border-top: 1px solid var(--line);
 }
 
 .character-controls .control-side {
@@ -824,25 +732,23 @@ nav a.active:after {
 .character-nav {
   display: grid;
   place-items: center;
-  width: 46px;
-  height: 46px;
-  border: 1px solid var(--line);
-  background: #191715;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
   color: var(--gold);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  border-radius: 4px;
   cursor: pointer;
-  transition: background .2s, border-color .2s, transform .15s;
+  transition: color .2s, transform .15s;
 }
 
 .character-nav:hover {
-  border-color: var(--gold-dim);
-  background: #2a241b;
+  color: #ffffff;
 }
 
 .character-nav:active {
-  transform: scale(.94);
+  transform: scale(.9);
 }
 
 .character-count {
@@ -906,12 +812,12 @@ nav a.active:after {
   display: none;
   grid-template-columns: minmax(280px, .82fr) minmax(0, 1.18fr);
   gap: 0;
-  border: 1px solid var(--line);
-  background: linear-gradient(130deg, #201c17, #151412);
+  border: none;
+  background: transparent;
   max-width: 100%;
-  border-radius: 4px;
+  border-radius: 0;
   overflow: hidden;
-  transition: border-color .25s, transform .25s var(--ease);
+  transition: transform .25s var(--ease);
 }
 
 .character-card.active {
@@ -937,8 +843,9 @@ nav a.active:after {
   overflow: hidden;
   height: 100%;
   min-height: 520px;
-  border-right: 1px solid var(--line);
+  border-right: none;
   background: radial-gradient(ellipse at 50% 40%, #544334, #28231d 53%, #171513 100%);
+  border-radius: 4px;
 }
 
 .portrait:after {
@@ -979,166 +886,11 @@ nav a.active:after {
   z-index: 0;
 }
 
-.portrait.has-photo .portrait-graphic { display: none; }
 .portrait.has-photo { background: #191715; }
 
 .portrait-dante { background: radial-gradient(ellipse at 50% 35%, #65503a, #2c241c 53%, #171513); }
 .portrait-cesare { background: radial-gradient(ellipse at 50% 35%, #5b4b45, #2a211f 53%, #171513); }
 .portrait-valerio { background: radial-gradient(ellipse at 50% 35%, #4c5050, #252727 53%, #171513); }
-
-.portrait-graphic {
-  position: absolute;
-  left: 50%;
-  top: 47%;
-  transform: translate(-50%, -50%);
-  width: 160px;
-  height: 230px;
-  opacity: .92;
-}
-
-/* Vector Animal Graphics */
-.panther:before {
-  content: "";
-  position: absolute;
-  bottom: -15px;
-  left: 10px;
-  width: 140px;
-  height: 165px;
-  border-radius: 48% 48% 22% 22%;
-  background: linear-gradient(110deg, #080909, #292a27 45%, #080909);
-  box-shadow: 0 0 40px #050505;
-}
-
-.panther .ear {
-  position: absolute;
-  z-index: 1;
-  top: 28px;
-  width: 48px;
-  height: 65px;
-  background: #090a09;
-  clip-path: polygon(50% 0, 100% 100%, 0 100%);
-}
-
-.panther .ear.left { left: 13px; transform: rotate(-15deg); }
-.panther .ear.right { right: 13px; transform: rotate(15deg); }
-
-.panther .eye {
-  position: absolute;
-  z-index: 2;
-  top: 99px;
-  width: 24px;
-  height: 6px;
-  background: #d7b45f;
-  box-shadow: 0 0 12px #d7b45f;
-  transform: rotate(-8deg);
-}
-
-.panther .eye.left { left: 40px; }
-.panther .eye.right { right: 40px; }
-
-.panther .scar {
-  position: absolute;
-  z-index: 3;
-  top: 65px;
-  left: 78px;
-  height: 85px;
-  width: 2px;
-  background: #9b7864;
-  transform: rotate(19deg);
-  box-shadow: 0 0 2px #9b7864;
-}
-
-.echidna:before {
-  content: "";
-  position: absolute;
-  bottom: -12px;
-  left: 13px;
-  width: 135px;
-  height: 160px;
-  border-radius: 45% 45% 20% 20%;
-  background: linear-gradient(90deg, #171413, #4a3b34 50%, #171413);
-}
-
-.echidna .spines {
-  position: absolute;
-  z-index: 1;
-  top: 5px;
-  left: 7px;
-  width: 145px;
-  height: 125px;
-  background: repeating-linear-gradient(112deg, transparent 0 8px, #b5a18a 9px 11px, transparent 12px 17px);
-  clip-path: polygon(0 100%, 7% 35%, 17% 55%, 24% 0, 36% 42%, 46% 5%, 56% 41%, 69% 0, 78% 46%, 94% 27%, 100% 100%);
-  opacity: .8;
-}
-
-.echidna .hair {
-  position: absolute;
-  top: 35px;
-  left: 24px;
-  width: 112px;
-  height: 78px;
-  background: #c1a77d;
-  clip-path: polygon(0 10%, 100% 0, 82% 60%, 100% 85%, 55% 75%, 25% 100%, 30% 57%);
-}
-
-.echidna .eye {
-  position: absolute;
-  top: 99px;
-  left: 76px;
-  width: 16px;
-  height: 6px;
-  background: #b49ce8;
-  box-shadow: 0 0 12px #a68ad9;
-  z-index: 3;
-}
-
-.owl:before {
-  content: "";
-  position: absolute;
-  bottom: -15px;
-  left: 16px;
-  width: 130px;
-  height: 170px;
-  border-radius: 48% 48% 10% 10%;
-  background: linear-gradient(90deg, #272a28, #69665c 50%, #242725);
-}
-
-.owl .wing {
-  position: absolute;
-  z-index: 1;
-  right: -18px;
-  top: 74px;
-  width: 78px;
-  height: 140px;
-  background: repeating-linear-gradient(170deg, #8b897c 0 3px, #333633 4px 7px);
-  clip-path: polygon(0 0, 100% 10%, 70% 100%, 0 68%);
-  opacity: .75;
-}
-
-.owl .owl-eye {
-  position: absolute;
-  z-index: 2;
-  top: 75px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #d7c48a 0 15%, #1b1b17 17% 28%, #b6a57a 30% 50%, #292a26 53%);
-  border: 3px solid #171816;
-}
-
-.owl .owl-eye.left { left: 25px; }
-.owl .owl-eye.right { right: 25px; }
-
-.owl .glasses {
-  position: absolute;
-  z-index: 3;
-  top: 85px;
-  left: 20px;
-  width: 120px;
-  height: 3px;
-  background: #b3b5ad;
-  box-shadow: 0 0 0 1px #20211f;
-}
 
 /* Character Info Body */
 .character-info {
@@ -1187,15 +939,16 @@ nav a.active:after {
 .traits span {
   font-size: 12px;
   font-weight: 600;
-  color: #b3a796;
-  border: 1px solid #3d352b;
+  color: var(--gold);
+  background: rgba(212, 178, 120, 0.08);
+  border: none;
   padding: 4px 10px;
   border-radius: 2px;
 }
 
 .character-detail {
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
+  padding-top: 10px;
+  border-top: none;
   margin-top: 22px;
   font-size: clamp(15px, 1.2vw, 16px);
   color: #c4baa9;
@@ -1241,159 +994,8 @@ nav a.active:after {
 }
 
 .estate-layout {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 6%;
+  display: block;
   margin-top: 40px;
-}
-
-.estate-art {
-  min-height: 430px;
-}
-
-.estate-frame {
-  height: 100%;
-  min-height: 430px;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #4c4030;
-  border-radius: 4px;
-  background: radial-gradient(ellipse at 50% 55%, #51402e, #25201a 54%, #121110 100%);
-}
-
-.estate-frame:before, .estate-frame:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 25%;
-  height: 62%;
-  background: #0f100e;
-  opacity: .8;
-  clip-path: polygon(0 20%, 50% 0, 100% 20%, 100% 100%, 0 100%);
-}
-
-.estate-frame:before { left: -4%; }
-.estate-frame:after { right: -4%; transform: scaleX(-1); }
-
-.estate-photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.estate-frame.has-photo .estate-building, .estate-frame.has-photo .rose { display: none; }
-.estate-frame.has-photo { background: #191715; }
-
-.estate-building {
-  position: absolute;
-  left: 12%;
-  right: 12%;
-  bottom: 11%;
-  height: 72%;
-  filter: drop-shadow(0 0 15px #080807);
-}
-
-.main-building {
-  position: absolute;
-  bottom: 0;
-  left: 15%;
-  width: 70%;
-  height: 60%;
-  background: linear-gradient(90deg, #171715, #302b23 50%, #171715);
-  border: 1px solid #54432e;
-}
-
-.main-building:before {
-  content: "";
-  position: absolute;
-  left: -8%;
-  right: -8%;
-  top: -25px;
-  height: 26px;
-  background: #211e19;
-  clip-path: polygon(0 100%, 50% 0, 100% 100%);
-}
-
-.tower {
-  position: absolute;
-  bottom: 30%;
-  width: 23%;
-  height: 60%;
-  background: linear-gradient(90deg, #171715, #302b23 50%, #171715);
-  border: 1px solid #54432e;
-}
-
-.tower:before {
-  content: "";
-  position: absolute;
-  top: -22px;
-  left: -8%;
-  width: 116%;
-  height: 24px;
-  background: #211e19;
-  clip-path: polygon(0 100%, 50% 0, 100% 100%);
-}
-
-.tower-a { left: 3%; }
-.tower-b { right: 3%; height: 72%; bottom: 25%; }
-
-.window-grid {
-  position: absolute;
-  inset: 12% 10% 15%;
-  background: repeating-linear-gradient(90deg, transparent 0 16%, rgba(179, 152, 101, 0.27) 16.5% 18%, transparent 18.5% 32%),
-              repeating-linear-gradient(0deg, transparent 0 22%, rgba(179, 152, 101, 0.25) 22.5% 25%, transparent 25.5% 45%);
-}
-
-.door {
-  position: absolute;
-  bottom: 0;
-  left: 43%;
-  width: 14%;
-  height: 30%;
-  border: 2px solid #7e6847;
-  background: #100f0d;
-  border-radius: 50% 50% 0 0;
-}
-
-.roofline {
-  position: absolute;
-  bottom: 63%;
-  left: 42%;
-  width: 16%;
-  height: 24%;
-  background: #1c1a16;
-  clip-path: polygon(0 100%, 50% 0, 100% 100%);
-}
-
-.rose {
-  position: absolute;
-  color: #a47d58;
-  font-size: 22px;
-  opacity: .6;
-}
-
-.rose-a { top: 17%; left: 15%; }
-.rose-b { top: 30%; right: 14%; }
-
-.estate-caption {
-  position: absolute;
-  bottom: 16px;
-  left: 20px;
-  right: 20px;
-  z-index: 2;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  color: #c5af8b;
-  text-shadow: 0 1px 6px #000;
-}
-
-.estate-caption span {
-  color: var(--gold);
-  padding: 0 7px;
 }
 
 .floor-list {
@@ -1595,7 +1197,7 @@ footer .wordmark {
 }
 
 /* ==========================================================================
-   Mobile-First High Readability Adjustments (Removing Fact Right Borders)
+   Mobile-First High Readability Adjustments
    ========================================================================== */
 @media (max-width: 650px) {
   html { scroll-padding-top: 70px; }
@@ -1611,7 +1213,7 @@ footer .wordmark {
     padding-right: 16px;
   }
 
-  .classification, .vertical-note { display: none; }
+  .vertical-note { display: none; }
 
   .wordmark { font-size: 14px; }
   .wordmark small { font-size: 9px; }
@@ -1673,9 +1275,6 @@ footer .wordmark {
 
   .hero-stamp strong { font-size: 24px; }
 
-  .moon { width: 90px; height: 90px; right: 8%; top: 8%; }
-  .estate-silhouette { right: -15%; width: 85%; height: 50%; opacity: .35; }
-
   .ticker { padding: 10px 0; font-size: 14px; }
 
   .section { padding: 60px 20px; }
@@ -1694,7 +1293,6 @@ footer .wordmark {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* 감각의 격차 등 팩트 카드 모바일 우측 선(border-right) 제거 */
   .fact {
     padding: 20px 14px;
     margin: 0;
@@ -1728,7 +1326,6 @@ footer .wordmark {
     height: clamp(260px, 75vw, 340px);
     min-height: 0;
     border-right: 0;
-    border-bottom: 1px solid var(--line);
   }
 
   .character-info { padding: 24px 20px; }
@@ -1737,8 +1334,7 @@ footer .wordmark {
   .traits span { font-size: 12px; padding: 4px 8px; }
   .character-detail { font-size: 15px; line-height: 1.9; }
 
-  .estate-layout { grid-template-columns: 1fr; gap: 24px; margin-top: 24px; }
-  .estate-art, .estate-frame { min-height: 280px; }
+  .estate-layout { margin-top: 24px; }
 
   .floor { grid-template-columns: 42px 1fr 18px; gap: 12px; padding: 18px 0; }
   .floor strong { font-size: 15px; }
@@ -1772,7 +1368,7 @@ footer .wordmark {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .moon, .fog-a, .fog-b, .hero-content, .ticker div.marquee, .floor-detail > *, .character-card { animation: none !important; }
+  .hero-content, .ticker div.marquee, .floor-detail > *, .character-card { animation: none !important; }
   .ticker div.marquee { width: auto; transform: none; }
 }
   </style>
@@ -1793,23 +1389,17 @@ footer .wordmark {
       <a href="#roster">PERSONE</a>
       <a href="#estate">ESTATE</a>
     </nav>
-    <span class="classification">RISERVATO · 19+</span>
   </header>
 
   <main id="top">
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-image" aria-hidden="true">
-        <div class="moon"></div>
-        <div class="estate-silhouette"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="fog fog-a"></div>
-        <div class="fog fog-b"></div>
-      </div>
+      <div class="hero-image" aria-hidden="true"></div>
       <div class="hero-content">
         <p class="eyebrow"><span class="dot"></span> MILANO, ITALIA · ANNO CORRENTE</p>
         <h1>LA FAMIGLIA<br/><em>PETRUCCI</em></h1>
         <p class="hero-sub">모든 장례에는 비밀이 묻히고,<br/>모든 침묵에는 대가가 따른다.</p>
-        <p class="hero-copy">표범이 왕좌에 앉은 도시. 법은 살아 있는 자를 지키지만, 밤은 페트루치의 소유다.</p>
+        <p class="hero-copy"> </p>
         <div class="hero-actions">
           <a class="button button-gold" href="#structure">DOSSIER 열람 <span>↘</span></a>
           <a class="text-link" href="#roster">인물 기록 보기 <span>→</span></a>
@@ -1872,7 +1462,6 @@ footer .wordmark {
     <section class="org-section" id="structure">
       <div class="section-kicker">조직 구조</div>
       <h2 style="margin-top: 10px;">LA STRUTTURA</h2>
-      <p class="org-quote">"서열은 정돈된 사업판에서 시작해 집안에서 끝난다."</p>
 
       <div class="org-tree">
         <!-- Boss -->
@@ -1976,7 +1565,7 @@ footer .wordmark {
           <div class="section-kicker">04 / PERSONE</div>
           <h2>페트루치</h2>
         </div>
-        <p>각자의 방식으로 침묵을 지키는 세 사람.<br/>이 집안에서 신뢰는 감정이 아니라 선택이다.</p>
+        <p>각자의 방식으로 침묵을 지키는 세 사람.<br/> 신뢰는 감정이 아니라 선택이다.</p>
       </div>
 
       <div class="character-controls" aria-label="인물 탐색">
@@ -1998,14 +1587,7 @@ footer .wordmark {
         <article class="character-card active" data-role="boss">
           <div class="portrait portrait-dante">
             <div class="portrait-number">01</div>
-            <img class="portrait-photo" data-image-url="이미지 주소를 여기에 입력" alt="단테 페트루치 이미지" />
-            <div class="portrait-graphic panther">
-              <div class="ear left"></div>
-              <div class="ear right"></div>
-              <div class="eye left"></div>
-              <div class="eye right"></div>
-              <div class="scar"></div>
-            </div>
+            <img class="portrait-photo" data-image-url="https://pub-4d4d01f26f1f44ed9ecf2c81a7900620.r2.dev/D/4.webp" alt="단테 페트루치 이미지" />
             <span class="portrait-caption">IL PANTERA NERA</span>
           </div>
           <div class="character-info">
@@ -2032,12 +1614,7 @@ footer .wordmark {
         <article class="character-card" data-role="capo">
           <div class="portrait portrait-cesare">
             <div class="portrait-number">02</div>
-            <img class="portrait-photo" data-image-url="이미지 주소를 여기에 입력" alt="체자레 린치빌로 이미지" />
-            <div class="portrait-graphic echidna">
-              <div class="spines"></div>
-              <div class="hair"></div>
-              <div class="eye"></div>
-            </div>
+            <img class="portrait-photo" data-image-url="https://pub-4d4d01f26f1f44ed9ecf2c81a7900620.r2.dev/C/5.webp" alt="체자레 린치빌로 이미지" />
             <span class="portrait-caption">L'ACULEO</span>
           </div>
           <div class="character-info">
@@ -2064,13 +1641,7 @@ footer .wordmark {
         <article class="character-card" data-role="consigliere">
           <div class="portrait portrait-valerio">
             <div class="portrait-number">03</div>
-            <img class="portrait-photo" data-image-url="이미지 주소를 여기에 입력" alt="발레리오 반누치 이미지" />
-            <div class="portrait-graphic owl">
-              <div class="wing"></div>
-              <div class="owl-eye left"></div>
-              <div class="owl-eye right"></div>
-              <div class="glasses"></div>
-            </div>
+            <img class="portrait-photo" data-image-url="https://pub-4d4d01f26f1f44ed9ecf2c81a7900620.r2.dev/B/2.webp" alt="발레리오 반누치 이미지" />
             <span class="portrait-caption">IL CONSIGLIERE</span>
           </div>
           <div class="character-info">
@@ -2088,7 +1659,7 @@ footer .wordmark {
               <span>책임</span>
             </div>
             <div class="character-detail">
-              <p>패밀리의 브레인이자 이성적 제어장치. 발소리 없는 걸음걸이와 서류를 넘기는 부드러운 날갯짓이 인상적이다. 감정에 쉽게 마음을 내주지 않으며, 규율과 책임을 우선한다. 직접적인 학대는 피하지만 서류상 분류와 기록을 조작해 비인간적인 결과를 완성한다.</p>
+              <p>패밀리의 브레인이자 이성적 제어장치. 발소리 없는 걸음걸이와 서류를 넘기는 부드러운 날갯짓이 인상적이다. 쉽게 마음을 내주지 않으며, 규율과 책임을 우선한다. 직접적인 학대는 피하지만 서류상 분류와 기록을 조작해 비인간적인 결과를 완성한다.</p>
             </div>
           </div>
         </article>
@@ -2107,20 +1678,6 @@ footer .wordmark {
         </div>
       </div>
       <div class="estate-layout">
-        <div class="estate-art">
-          <div class="estate-frame">
-            <img class="estate-photo" data-image-url="이미지 주소를 여기에 입력" alt="페트루치 저택 이미지" />
-            <div class="estate-building">
-              <div class="tower tower-a"></div>
-              <div class="main-building"><div class="window-grid"></div><div class="door"></div></div>
-              <div class="tower tower-b"></div>
-              <div class="roofline"></div>
-            </div>
-            <div class="rose rose-a">❖</div>
-            <div class="rose rose-b">❖</div>
-            <div class="estate-caption">TENUTA PETRUCCI <span>·</span> NORD DI MILANO</div>
-          </div>
-        </div>
         <div class="floor-list">
           <button class="floor active" data-floor="3">
             <span class="floor-no">3F</span>
@@ -2151,7 +1708,7 @@ footer .wordmark {
           <div class="floor-detail" aria-live="polite">
             <p class="floor-detail-kicker">3F / 사적 공간 (단테)</p>
             <h3>단테의 개인 거처</h3>
-            <p>단테 마스터 침실 / 개인 테라스 / 인접 침실. 시가와 위스키 향이 맴도는 최상층 사적 공간으로 외부인의 접근이 엄격히 통제됩니다.</p>
+            <p>단테 마스터 침실 / 개인 테라스 / 인접 침실. 시가와 위스키 향이 맴오는 최상층 사적 공간으로 외부인의 접근이 엄격히 통제됩니다.</p>
           </div>
         </div>
       </div>
@@ -2206,10 +1763,9 @@ footer .wordmark {
     // Image URL injector
     document.querySelectorAll('[data-image-url]').forEach((img) => {
       const url = (img.dataset.imageUrl || '').trim();
-      if (url && url !== '이미지 주소를 여기에 입력') {
+      if (url) {
         img.src = url;
         img.closest('.portrait')?.classList.add('has-photo');
-        img.closest('.estate-frame')?.classList.add('has-photo');
       }
     });
 
